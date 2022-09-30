@@ -1,14 +1,14 @@
 <template>
   <div>
     <!-- 左側欄 -->
-    <asideMenu />
+    <productCard />
   </div>
 </template>
 <script>
-import asideMenu from "./components/asideMenu.vue";
+import productCard from "./components/productCard.vue";
 export default {
   name: "App",
-  components: { asideMenu },
+  components: { productCard },
   methods: {
     // ...mapActions(["fetchLocation", "fetchPharmacies"]),
     fetchProducts(state) {
