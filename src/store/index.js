@@ -3,7 +3,7 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     //存放API回傳的商品列表資訊
-    products: {},
+    products: [],
   },
   getters: {
     // products(state) {
@@ -19,16 +19,20 @@ export default createStore({
   },
   actions: {
     //取得商品資料
-    fetchProducts({ commit }) {
-      fetch("https://fakestoreapi.com/products?limit=5")
-        .then((res) => res.json())
-        .then((json) => {
-          console.log(json);
-          commit("setProducts", json);
-        });
-      //   const res = await fetch("https://fakestoreapi.com/products/1");
-      //透過commit來操作mutaions
+    // fetchProducts({ commit }) {
+    // fetch("https://fakestoreapi.com/products?limit=5")
+    //   .then((res) => res.json())
+    //   .then((json) => {
+    //     console.log(json);
+    //     commit("setProducts", json);
+    //   });
+    async fetchProducts({ commit }) {
+      const res = await fetch("https://fakestoreapi.com/products?limit=5");
+      const json = await res.json();
+      console.log(json);
+      commit("setProducts", json);
     },
+    //透過commit來操作mutaions
   },
   modules: {},
 });
