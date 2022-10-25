@@ -1,11 +1,11 @@
 <template>
   <div>
     <!-- 左側欄 -->
-    <productCard />
+    <productCard> </productCard>
   </div>
 </template>
 <script>
-import productCard from "./components/productCard.vue";
+import productCard from "@/components/productCard.vue";
 export default {
   name: "App",
   components: { productCard },

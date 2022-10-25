@@ -1,33 +1,22 @@
 <template>
-  <div v-for="(p, index) in products" :key="p.id">
-    <p @click="showDetails(index)">{{ p.title }}</p>
+  <div class="card">
+    <img :src="selected.image" alt="" style="width: 100%" />
+    <h1>{{ selected.title }}</h1>
+    <p class="price">${{ selected.price }}</p>
+    <p>{{ selected.description }}</p>
   </div>
-  <cardDetail v-if="item.id" :selected="item"></cardDetail>
 </template>
 
 <script>
-import cardDetail from "@/components/cardDetail.vue";
 export default {
-  data() {
-    return {
-      item: {},
-    };
-  },
-  components: { cardDetail },
+  props: ["selected"],
   computed: {
     products() {
       return this.$store.state.products;
     },
   },
-  methods: {
-    showDetails(index) {
-      this.item = this.products[index];
-    },
-  },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
