@@ -10,11 +10,6 @@
 <script>
 export default {
   props: ["selected"],
-  computed: {
-    products() {
-      return this.$store.state.products;
-    },
-  },
 };
 </script>
 <style scoped lang="scss">

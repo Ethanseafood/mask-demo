@@ -1,6 +1,6 @@
 <template>
-  <div v-for="(p, index) in products" :key="p.id">
-    <p @click="showDetails(index)">{{ p.title }}</p>
+  <div v-for="(product, index) in products" :key="product.id">
+    <p @click="showDetails(index)">{{ product.title }}</p>
   </div>
   <cardDetail v-if="item.id" :selected="item"></cardDetail>
 </template>
