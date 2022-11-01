@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     addData() {
+      console.log("add data");
       this.$store.dispatch("addProducts");
     },
   }, // end of method
