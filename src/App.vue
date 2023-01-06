@@ -16,11 +16,11 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link to="/products" class="nav-link">Products</router-link>
+            <router-link to="/teams" class="nav-link">Teams</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/createProducts" class="nav-link"
-              >Create Products</router-link
+              >Schedule</router-link
             >
           </li>
         </ul>
@@ -45,6 +45,8 @@ export default {
   },
   mounted() {
     this.$store.dispatch("fetchProducts");
+    // this.$store.dispatch("fetchLiveGameData");
+    // this.$store.dispatch("fetchAllTeams");
   },
 };
 </script>
