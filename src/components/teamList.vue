@@ -7,7 +7,7 @@
         :key="team.id"
       >
         <div>
-          <router-link to="@productDetail" class="link">
+          <router-link to="@cardDetail" class="link">
             <h3>{{ team.name }}</h3></router-link
           >
         </div>
