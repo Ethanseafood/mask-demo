@@ -7,7 +7,6 @@
       <table class="table table-dark table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Player</th>
             <th scope="col">POS</th>
             <th scope="col">MIN%</th>
@@ -33,7 +32,6 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
             <td>Joel Embiid</td>
             <td>F-C</td>
             <td>36:49</td>

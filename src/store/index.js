@@ -6,12 +6,15 @@ export default createStore({
     products: [],
     liveGameData: [],
     allTeams: [],
+    allPlayers: [],
+    selectedTeamId: null,
   },
   getters: {
-    // products: (state) {
-    //   //商品
-    //   return state.products;
-    // },
+    currentTeamRoster(state) {
+      return state.allPlayers.filter(
+        (player) => player.data.team.id == state.selectedTeamId
+      );
+    },
   },
   mutations: {
     setProducts(state, payload) {
@@ -26,6 +29,12 @@ export default createStore({
     },
     setAllTeams(state, payload) {
       state.allTeams = payload;
+    },
+    setAllPlayers(state, payload) {
+      state.allPlayers = payload;
+    },
+    setCurrentTeam(state, payload) {
+      state.selectedTeamId = payload;
     },
   },
   actions: {
@@ -55,8 +64,26 @@ export default createStore({
           },
         });
         const json = await res.json();
-        console.log(json);
+        // console.log(json);
         commit("setAllTeams", json);
+      } catch (err) {
+        console.error(err);
+      }
+    },
+
+    async fetchAllPlayers({ commit }) {
+      try {
+        const res = await fetch("https://www.balldontlie.io/api/v1/players", {
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Key":
+              "bf0aa5de14mshc13bfb9e7ec344dp1548d9jsn45138c191d7f",
+            "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
+          },
+        });
+        const json = await res.json();
+        // console.log(json);
+        commit("setAllPlayers", json);
       } catch (err) {
         console.error(err);
       }

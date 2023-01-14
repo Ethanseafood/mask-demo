@@ -3,13 +3,13 @@
     <div class="row">
       <div
         class="col-12 col-md-3 mt-5"
-        v-for="team in teams.data"
+        v-for="(team, index) in teams"
         :key="team.id"
       >
         <div>
-          <router-link to="@cardDetail" class="link">
-            <h3>{{ team.name }}</h3></router-link
-          >
+          <h3 @click="showCurrentTeam(teams[index].id)">
+            {{ team.name }} {{ team.id }}
+          </h3>
         </div>
         <!-- <p @click="showDetails(index)">{{ team.name }}</p> -->
       </div>
@@ -24,21 +24,26 @@ export default {
   data() {
     return {
       // item: {},
+      filteredPlayers: [],
     };
   },
   // components: { cardDetail },
   computed: {
     teams() {
-      return this.$store.state.allTeams;
+      return this.$store.state.allTeams.data;
     },
   },
   methods: {
-    // showCurrentTeam(index) {
-    //   this.item = this.teams.data[index];
-    // },
+    showCurrentTeam(teamID) {
+      this.$store.commit("setCurrentTeam", teamID);
+      this.filteredPlayers = this.$store.getters.currentTeamRoster;
+      console.log(this.filteredPlayers);
+      // router.push({ path: "teamDetail" });
+    },
   },
   mounted() {
     this.$store.dispatch("fetchAllTeams");
+    this.$store.dispatch("fetchAllPlayers");
   },
 };
 </script>
