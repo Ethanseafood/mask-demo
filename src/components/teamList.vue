@@ -36,9 +36,9 @@ export default {
   methods: {
     showCurrentTeam(teamID) {
       this.$store.commit("setCurrentTeam", teamID);
-      this.filteredPlayers = this.$store.getters.currentTeamRoster;
-      console.log(this.filteredPlayers);
-      // router.push({ path: "teamDetail" });
+      console.log(this.$store.getters.currentTeamRoster);
+      //console.log(this.filteredPlayers);
+      this.$router.push({ path: "teamDetail" });
     },
   },
   mounted() {

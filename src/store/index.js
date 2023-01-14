@@ -11,8 +11,9 @@ export default createStore({
   },
   getters: {
     currentTeamRoster(state) {
+      // console.log(state.allPlayers);
       return state.allPlayers.filter(
-        (player) => player.data.team.id == state.selectedTeamId
+        (player) => player.team.id == state.selectedTeamId
       );
     },
   },
@@ -72,21 +73,31 @@ export default createStore({
     },
 
     async fetchAllPlayers({ commit }) {
-      try {
-        const res = await fetch("https://www.balldontlie.io/api/v1/players", {
-          method: "GET",
-          headers: {
-            "X-RapidAPI-Key":
-              "bf0aa5de14mshc13bfb9e7ec344dp1548d9jsn45138c191d7f",
-            "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
-          },
-        });
-        const json = await res.json();
-        // console.log(json);
-        commit("setAllPlayers", json);
-      } catch (err) {
-        console.error(err);
+      let json = {};
+      // 因為res傳傳結果是物件{data,meta},這裡只取data並處理成陣列
+      let playersJson = [];
+      // 因為一次只給25個球員資料，為了get所有球員資料所以要for loop
+      for (let i = 1; i < 21; i++) {
+        try {
+          const res = await fetch(
+            `https://www.balldontlie.io/api/v1/players/?page=${String(i)}`,
+            {
+              method: "GET",
+              headers: {
+                "X-RapidAPI-Key":
+                  "bf0aa5de14mshc13bfb9e7ec344dp1548d9jsn45138c191d7f",
+                "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
+              },
+            }
+          );
+          json = await res.json();
+          playersJson = playersJson.concat(json.data);
+        } catch (err) {
+          console.error(err);
+        }
       }
+      // console.log(playersJson);
+      commit("setAllPlayers", playersJson);
     },
 
     async fetchLiveGameData({ commit }) {
