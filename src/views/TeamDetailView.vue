@@ -1,12 +1,12 @@
 <template>
   <div>
-    <cardDetail> </cardDetail>
+    <TeamRoster> </TeamRoster>
   </div>
 </template>
 
 <script>
-import cardDetail from "@/components/cardDetail.vue";
+import TeamRoster from "@/components/TeamRoster";
 export default {
-  components: { cardDetail },
+  components: { TeamRoster },
 };
 </script>

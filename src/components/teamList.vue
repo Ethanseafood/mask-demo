@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <div class="row">
+    <div
+      class="row justify-content-center"
+      v-if="this.$store.state.allPlayers.length == 1250"
+    >
       <div
         class="col-12 col-md-3 mt-5"
         v-for="(team, index) in teams"
@@ -8,12 +11,16 @@
       >
         <div>
           <h3 @click="showCurrentTeam(teams[index].id)">
-            {{ team.name }} {{ team.id }}
+            <!--<h3 @click="showCurrentTeam(team.id )">-->
+            {{ team.name }}
           </h3>
         </div>
         <!-- <p @click="showDetails(index)">{{ team.name }}</p> -->
       </div>
       <!-- <cardDetail v-if="item.id" :selected="item"></cardDetail> -->
+    </div>
+    <div v-else>
+      <h1>Loading...</h1>
     </div>
   </div>
 </template>
@@ -24,7 +31,6 @@ export default {
   data() {
     return {
       // item: {},
-      filteredPlayers: [],
     };
   },
   // components: { cardDetail },
@@ -35,10 +41,9 @@ export default {
   },
   methods: {
     showCurrentTeam(teamID) {
+      // console.log(this.$store.getters.currentTeamRoster);
       this.$store.commit("setCurrentTeam", teamID);
-      console.log(this.$store.getters.currentTeamRoster);
-      //console.log(this.filteredPlayers);
-      this.$router.push({ path: "teamDetail" });
+      this.$router.push({ name: "teamDetail" });
     },
   },
   mounted() {

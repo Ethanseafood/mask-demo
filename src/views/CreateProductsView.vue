@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import productForm from "@/components/productForm.vue";
+import ProductForm from "@/components/ProductForm";
 export default {
-  components: { productForm },
+  components: { ProductForm },
 };
 </script>

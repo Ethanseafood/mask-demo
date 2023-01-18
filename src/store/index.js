@@ -11,7 +11,17 @@ export default createStore({
   },
   getters: {
     currentTeamRoster(state) {
-      // console.log(state.allPlayers);
+      console.log(state.allPlayers);
+      console.log(state.selectedTeamId);
+      return state.allPlayers.filter(
+        (player) => player.team.id == state.selectedTeamId
+      );
+    },
+    selectedTeamId(state) {
+      console.log("get teamId");
+      return state.selectedTeamId;
+    },
+    allPlayers(state) {
       return state.allPlayers.filter(
         (player) => player.team.id == state.selectedTeamId
       );
@@ -32,9 +42,12 @@ export default createStore({
       state.allTeams = payload;
     },
     setAllPlayers(state, payload) {
+      // state.allPlayers = payload;
       state.allPlayers = payload;
+      console.log("allplayers", payload);
     },
     setCurrentTeam(state, payload) {
+      console.log("set teamId");
       state.selectedTeamId = payload;
     },
   },
@@ -77,7 +90,7 @@ export default createStore({
       // 因為res傳傳結果是物件{data,meta},這裡只取data並處理成陣列
       let playersJson = [];
       // 因為一次只給25個球員資料，為了get所有球員資料所以要for loop
-      for (let i = 1; i < 21; i++) {
+      for (let i = 1; i < 51; i++) {
         try {
           const res = await fetch(
             `https://www.balldontlie.io/api/v1/players/?page=${String(i)}`,
@@ -96,7 +109,6 @@ export default createStore({
           console.error(err);
         }
       }
-      // console.log(playersJson);
       commit("setAllPlayers", playersJson);
     },
 
