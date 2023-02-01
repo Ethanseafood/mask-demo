@@ -18,11 +18,6 @@
           <li class="nav-item">
             <router-link to="/teams" class="nav-link">Teams</router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/createProducts" class="nav-link"
-              >Schedule</router-link
-            >
-          </li>
         </ul>
       </div>
     </div>
@@ -32,19 +27,9 @@
 <script>
 export default {
   name: "App",
-  methods: {
-    // ...mapActions(["fetchA", "fetchB"]),
-    // fetchProducts(state) {
-    //   return state.fetchProducts;
-    // },
-  },
-  computed: {
-    // getProduct() {
-    //   return this.state.fetchProducts;
-    // },
-  },
+  methods: {},
+  computed: {},
   mounted() {
-    this.$store.dispatch("fetchProducts");
     // this.$store.dispatch("fetchLiveGameData");
     // this.$store.dispatch("fetchAllTeams");
   },

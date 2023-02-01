@@ -3,20 +3,13 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     //存放API回傳的商品列表資訊
-    products: [],
-    liveGameData: [],
     allTeams: [],
     allPlayers: [],
+    specificStats: [],
     selectedTeamId: null,
+    selectedPlayerId: null,
   },
   getters: {
-    currentTeamRoster(state) {
-      console.log(state.allPlayers);
-      console.log(state.selectedTeamId);
-      return state.allPlayers.filter(
-        (player) => player.team.id == state.selectedTeamId
-      );
-    },
     selectedTeamId(state) {
       console.log("get teamId");
       return state.selectedTeamId;
@@ -26,47 +19,32 @@ export default createStore({
         (player) => player.team.id == state.selectedTeamId
       );
     },
+    specificStats(state) {
+      return state.specificStats.filter(
+        (player) => player.id == state.selectedPlayerId
+      );
+    },
   },
   mutations: {
-    setProducts(state, payload) {
-      state.products = payload;
-      // console.log(state.products);
-    },
-    createProducts(state, payload) {
-      state.products.push(payload);
-    },
-    setNBALiveData(state, payload) {
-      state.liveGameData = payload;
-    },
     setAllTeams(state, payload) {
       state.allTeams = payload;
     },
     setAllPlayers(state, payload) {
-      // state.allPlayers = payload;
       state.allPlayers = payload;
       console.log("allplayers", payload);
     },
+    setSpecificStats(state, payload) {
+      state.specificStats = payload;
+      console.log("specificStats", payload);
+    },
     setCurrentTeam(state, payload) {
-      console.log("set teamId");
       state.selectedTeamId = payload;
+    },
+    setCurrentPlayer(state, payload) {
+      state.selectedPlayerId = payload;
     },
   },
   actions: {
-    //取得商品資料
-    // fetchProducts({ commit }) {
-    // fetch("https://fakestoreapi.com/products?limit=5")
-    //   .then((res) => res.json())
-    //   .then((json) => {
-    //     console.log(json);
-    //     commit("setProducts", json);
-    //   });
-    async fetchProducts({ commit }) {
-      const res = await fetch("https://fakestoreapi.com/products");
-      const json = await res.json();
-      // console.log(json);
-      commit("setProducts", json);
-    },
-
     async fetchAllTeams({ commit }) {
       try {
         const res = await fetch("https://www.balldontlie.io/api/v1/teams", {
@@ -112,10 +90,11 @@ export default createStore({
       commit("setAllPlayers", playersJson);
     },
 
-    async fetchLiveGameData({ commit }) {
+    async fetchSpecificStats({ commit }) {
       try {
+        // const targetPlayerIndex = event.target;
         const res = await fetch(
-          "https://free-nba.p.rapidapi.com/players?page=0&per_page=25",
+          `https://www.balldontlie.io/api/v1/stats/?seasons[]=2018&seasons[]=2019&&postseason=true`,
           {
             method: "GET",
             headers: {
@@ -127,28 +106,13 @@ export default createStore({
         );
         const json = await res.json();
         // console.log(json);
-        commit("setNBALiveData", json);
+        commit("setSpecificStats", json);
       } catch (err) {
         console.error(err);
       }
     },
+    // const playerRow = document.querySelector("table td tr"); //舉例
+    // const playerId = playerRow.dataset.playerId; //舉例
   },
-
-  //透過commit來操作mutaions
-  // addProducts({ commit }) {
-  //   fetch("https://fakestoreapi.com/products", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       title: this.title,
-  //       price: parseInt(this.price, 10),
-  //       description: this.description,
-  //       image: "https://i.pravatar.cc",
-  //       category: "electronic",
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((json) => console.log(json));
-  //   commit("createProducts");
-  // },
   modules: {},
 });

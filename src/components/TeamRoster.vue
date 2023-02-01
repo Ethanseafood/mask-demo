@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row mt-5">
+    <div class="row mt-5 text-center">
       <div>
         <h1>ROSTERS</h1>
       </div>
@@ -8,15 +8,16 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">FName</th>
-            <th scope="col">LName</th>
+            <th scope="col">Name</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(player, index) in allTimePlayers" :key="player.id">
             <th scope="row">{{ index + 1 }}</th>
-            <td>{{ player.first_name }}</td>
-            <td>{{ player.last_name }}</td>
+            <td @click="showCurrentPlayer(player.id)">
+              {{ player.first_name }}
+              {{ player.last_name }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -26,17 +27,22 @@
 
 <script>
 export default {
-  methods: {},
   computed: {
     allTimePlayers() {
       return this.$store.getters.allPlayers;
     },
   },
+  methods: {
+    showCurrentPlayer(playerID) {
+      this.$store.commit("setCurrentPlayer", playerID);
+      this.$router.push({ name: "playerStats" });
+    },
+  },
   mounted() {
+    this.$store.dispatch("fetchSpecificStats");
     console.log(this.$store.getters.selectedTeamId);
     //console.log(this.$route.params);
     console.log(this.$store.getters.allPlayers);
-    // console.log(this.$store.getter.currentTeamRosters);
   },
 };
 </script>

@@ -4,14 +4,10 @@
       class="row justify-content-center"
       v-if="this.$store.state.allPlayers.length == 1250"
     >
-      <div
-        class="col-12 col-md-3 mt-5"
-        v-for="(team, index) in teams"
-        :key="team.id"
-      >
+      <div class="col-12 col-md-3 mt-5" v-for="team in teams" :key="team.id">
         <div>
-          <h3 @click="showCurrentTeam(teams[index].id)">
-            <!--<h3 @click="showCurrentTeam(team.id )">-->
+          <h3 @click="showCurrentTeam(team.id)">
+            <!--<h3 @click="showCurrentTeam(teams[index].id)">-->
             {{ team.name }}
           </h3>
         </div>
@@ -26,14 +22,10 @@
 </template>
 
 <script>
-// import cardDetail from "@/components/cardDetail.vue";
 export default {
   data() {
-    return {
-      // item: {},
-    };
+    return {};
   },
-  // components: { cardDetail },
   computed: {
     teams() {
       return this.$store.state.allTeams.data;
@@ -41,7 +33,6 @@ export default {
   },
   methods: {
     showCurrentTeam(teamID) {
-      // console.log(this.$store.getters.currentTeamRoster);
       this.$store.commit("setCurrentTeam", teamID);
       this.$router.push({ name: "teamDetail" });
     },
@@ -49,6 +40,7 @@ export default {
   mounted() {
     this.$store.dispatch("fetchAllTeams");
     this.$store.dispatch("fetchAllPlayers");
+    // this.$store.dispatch("fetchAllStats");
   },
 };
 </script>

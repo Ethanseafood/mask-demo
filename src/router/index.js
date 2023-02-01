@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import CreateProductsView from "../views/CreateProductsView.vue";
 import TeamDetailView from "../views/TeamDetailView";
+import PlayerStatsView from "../views/PlayerStatsView";
 const routes = [
   {
     path: "/",
@@ -18,14 +18,14 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/TeamsView.vue"),
   },
   {
-    path: "/createProducts",
-    name: "createProducts",
-    component: CreateProductsView,
-  },
-  {
     path: "/teamDetail",
     name: "teamDetail",
     component: TeamDetailView,
+  },
+  {
+    path: "/playerStats",
+    name: "playerStats",
+    component: PlayerStatsView,
   },
 ];
 
