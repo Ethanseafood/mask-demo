@@ -4,6 +4,13 @@
       <div>
         <h1>ROSTERS</h1>
       </div>
+
+      <!-- <li v-for="player in allTimePlayers" :key="player.id">
+        <h1 @click="showCurrentPlayer(player.id)">
+          {{ player.first_name }}
+        </h1>
+      </li> -->
+
       <table class="table table-dark table-hover">
         <thead>
           <tr>
@@ -34,6 +41,7 @@ export default {
   },
   methods: {
     showCurrentPlayer(playerID) {
+      console.log(playerID);
       this.$store.commit("setCurrentPlayer", playerID);
       this.$router.push({ name: "playerStats" });
     },

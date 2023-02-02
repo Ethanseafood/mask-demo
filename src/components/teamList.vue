@@ -23,9 +23,6 @@
 
 <script>
 export default {
-  data() {
-    return {};
-  },
   computed: {
     teams() {
       return this.$store.state.allTeams.data;

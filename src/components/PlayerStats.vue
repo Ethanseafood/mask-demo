@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div>
-        <h3>StatS</h3>
+        <h3>stats</h3>
       </div>
       <table class="table table-dark table-hover">
         <thead>
