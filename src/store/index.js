@@ -2,10 +2,8 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    //存放API回傳的商品列表資訊
-    allTeams: [],
     allPlayers: [],
-    specificStats: [],
+    yearOfAvg: [],
     selectedTeamId: null,
     selectedPlayerId: null,
   },
@@ -23,23 +21,20 @@ export default createStore({
         (player) => player.team.id == state.selectedTeamId
       );
     },
-    specificStats(state) {
+    YearOfAvg(state) {
       console.log("get playerId");
-      return state.specificStats.data.filter(
+      return state.allPlayers.data.filter(
         (stats) => stats.player.id == state.selectedPlayerId
       );
     },
   },
   mutations: {
-    setAllTeams(state, payload) {
-      state.allTeams = payload;
-    },
     setAllPlayers(state, payload) {
       state.allPlayers = payload;
+      console.log("all players", payload);
     },
-    setSpecificStats(state, payload) {
-      state.specificStats = payload;
-      // console.log("specificStats", payload);
+    setYearOfAvg(state, payload) {
+      state.yearOfAvg = payload;
     },
     setCurrentTeam(state, payload) {
       state.selectedTeamId = payload;
@@ -49,25 +44,51 @@ export default createStore({
     },
   },
   actions: {
-    async fetchAllTeams({ commit }) {
-      try {
-        const res = await fetch("https://www.balldontlie.io/api/v1/teams", {
-          method: "GET",
-          headers: {
-            "X-RapidAPI-Key":
-              "bf0aa5de14mshc13bfb9e7ec344dp1548d9jsn45138c191d7f",
-            "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
-          },
-        });
-        const json = await res.json();
-        console.log("ALLTEAMS", json);
-        commit("setAllTeams", json);
-      } catch (err) {
-        console.error(err);
-      }
-    },
+    // async fetchAllTeams({ commit }) {
+    //   try {
+    //     const res = await fetch("https://www.balldontlie.io/api/v1/teams", {
+    //       method: "GET",
+    //       headers: {
+    //         "X-RapidAPI-Key":
+    //           "bf0aa5de14mshc13bfb9e7ec344dp1548d9jsn45138c191d7f",
+    //         "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
+    //       },
+    //     });
+    //     const json = await res.json();
+    //     // console.log("ALLTEAMS", json);
+    //     commit("setAllTeams", json);
+    //   } catch (err) {
+    //     console.error(err);
+    //   }
+    // },
 
     async fetchLakersPlayers({ commit }) {
+      let json = {};
+      let playerjson = [];
+      for (let i = 0; i < 38; i++) {
+        try {
+          // const targetPlayerIndex = event.target;
+          const res = await fetch(
+            "https://www.balldontlie.io/api/v1/stats/?seasons[]=2022&seasons[]=2023&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736",
+            {
+              method: "GET",
+              headers: {
+                "X-RapidAPI-Key":
+                  "bf0aa5de14mshc13bfb9e7ec344dp1548d9jsn45138c191d7f",
+                "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
+              },
+            }
+          );
+          json = await res.json();
+          playerjson = playerjson.concat(json.data);
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      commit("setAllPlayers", playerjson);
+    },
+
+    async fetchYearOfAvg({ commit }) {
       try {
         const res = await fetch(
           "https://www.balldontlie.io/api/v1/season_averages/?seasons[]=2022&seasons[]=2023&player_ids[]=237&player_ids[]=17553995&player_ids[]=117&player_ids[]=248&player_ids[]=409&player_ids[]=666925&player_ids[]=464&player_ids[]=38017697&player_ids[]=45&player_ids[]=666609&player_ids[]=472&player_ids[]=38017656&player_ids[]=74&player_ids[]=68&player_ids[]=166",
@@ -81,30 +102,8 @@ export default createStore({
           }
         );
         const json = await res.json();
-        console.log("LAKERS", json);
-        commit("setAllPlayers", json);
-      } catch (err) {
-        console.error(err);
-      }
-    },
-
-    async fetchSpecificStats({ commit }) {
-      try {
-        // const targetPlayerIndex = event.target;
-        const res = await fetch(
-          "https://www.balldontlie.io/api/v1/stats/?seasons[]=2022&seasons[]=2023&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736",
-          {
-            method: "GET",
-            headers: {
-              "X-RapidAPI-Key":
-                "bf0aa5de14mshc13bfb9e7ec344dp1548d9jsn45138c191d7f",
-              "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
-            },
-          }
-        );
-        const json = await res.json();
-        console.log("STATS", json);
-        commit("setSpecificStats", json);
+        console.log("YearOfAvg", json);
+        commit("setYearOfAvg", json);
       } catch (err) {
         console.error(err);
       }

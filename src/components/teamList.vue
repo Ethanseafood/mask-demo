@@ -14,8 +14,8 @@
       </div>
     </div>
   </div> -->
-  <div class="container">
-    <div class="background">
+  <div class="background">
+    <div class="container">
       <div
         class="g-5 mt-5 row row-cols-md-2 row-cols-lg-3 justify-content-start"
       >
@@ -26,14 +26,14 @@
               src="../assets/LAKERS/2223_RosterImageUpdate_Bamba_1040x1210.jpg"
             />
           </div>
-          <div class="container">
+          <div class="button container mt-3">
             <div class="row">
-              <div>
-                <button type="button" class="btn btn-light">Light</button>
-              </div>
-              <div>
-                <button type="button" class="btn btn-light">Light</button>
-              </div>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>MO BAMBA BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
             </div>
           </div>
         </div>
@@ -44,6 +44,16 @@
               src="../assets/LAKERS/2223_RosterImageUpdate_Beasley_1040x1210_2.jpg"
             />
           </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>MALIK BEASLEY BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md">
           <div>
@@ -51,6 +61,16 @@
               class="img"
               src="../assets/LAKERS/2223_RosterImageUpdate_BrownJr_1040x1210.webp"
             />
+          </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>TROY BROWN JR. BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
           </div>
         </div>
         <div class="col-md">
@@ -60,6 +80,16 @@
               src="../assets/LAKERS/2223_RosterImageUpdate_Christie_v2_1040x1210.webp"
             />
           </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>MAX CHRISTIE BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md">
           <div>
@@ -67,6 +97,16 @@
               class="img"
               src="../assets/LAKERS/2223_RosterImageUpdate_Davis_1040x1210.webp"
             />
+          </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>ANTHONY DAVIS BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
           </div>
         </div>
         <div class="col-md">
@@ -76,6 +116,16 @@
               src="../assets/LAKERS/2223_RosterImageUpdate_Gabriel_1040x1210.webp"
             />
           </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>WENYEN GABRIEL BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md">
           <div>
@@ -83,6 +133,16 @@
               class="img"
               src="../assets/LAKERS/2223_RosterImageUpdate_Hachimura_1040x1210.avif"
             />
+          </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>RUI HACHIMURA BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
           </div>
         </div>
         <div class="col-md">
@@ -92,6 +152,16 @@
               src="../assets/LAKERS/2223_RosterImageUpdate_James_1040x1210.webp"
             />
           </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>LEBRON JAMES BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md">
           <div>
@@ -99,6 +169,16 @@
               class="img"
               src="../assets/LAKERS/2223_RosterImageUpdate_Reaves_1040x1210.webp"
             />
+          </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>AUSTIN REAVERS BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
           </div>
         </div>
         <div class="col-md">
@@ -108,6 +188,16 @@
               src="../assets/LAKERS/2223_RosterImageUpdate_Reed_1040x1210.jpg"
             />
           </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>DAVON REED BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md">
           <div>
@@ -115,6 +205,16 @@
               class="img"
               src="../assets/LAKERS/2223_RosterImageUpdate_Russell_1040x1210.jpg"
             />
+          </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>D'ANGELO RUSSELL BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
           </div>
         </div>
         <div class="col-md">
@@ -124,6 +224,16 @@
               src="../assets/LAKERS/2223_RosterImage_Schroder_1040x1210.webp"
             />
           </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>DENNIS SCHRÖDER BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md">
           <div>
@@ -131,6 +241,16 @@
               class="img"
               src="../assets/LAKERS/2223_RosterImageUpdate_Vanderbilt_1040x1210.jpg"
             />
+          </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>JARRED VANDERBILT BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
           </div>
         </div>
         <div class="col-md">
@@ -140,6 +260,16 @@
               src="../assets/LAKERS/2223_RosterImageUpdate_Walker_v2_1040x1210.webp"
             />
           </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>LONNIE WALKER IV BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md">
           <div>
@@ -148,6 +278,16 @@
               src="../assets/LAKERS/2223_RosterImageUpdate_PippenJr_v2_1040x1210.webp"
             />
           </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>SCOTTY PIPPEN JR. BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md">
           <div>
@@ -155,6 +295,16 @@
               class="img"
               src="../assets/LAKERS/2223_RosterImageUpdate_Swider_v2_1040x1210.webp"
             />
+          </div>
+          <div class="button container mt-3">
+            <div class="row">
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>COLE SWIDER BIO</b>
+              </button>
+              <button type="button" class="btn btn-light btn-lg m-3">
+                <b>PLAYER STATS</b>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -165,19 +315,18 @@
 <script>
 export default {
   computed: {
-    teams() {
-      return this.$store.state.allTeams.data;
+    players() {
+      return this.$store.state.allplayers;
     },
   },
   methods: {
-    showCurrentTeam(teamID) {
-      this.$store.commit("setCurrentTeam", teamID);
+    goToPlayerBio(playerID) {
+      this.$store.commit("setCurrentPlayer", playerID);
       this.$router.push({ name: "teamDetail" });
     },
   },
   mounted() {
-    this.$store.dispatch("fetchAllTeams");
-    this.$store.dispatch("fetchSpecificStats");
+    this.$store.dispatch("fetchYearOfAvg");
     this.$store.dispatch("fetchLakersPlayers");
     // this.$store.dispatch("fetchAllStats");
   },
@@ -189,10 +338,9 @@ export default {
 .img {
   width: 100%;
 }
-.row {
-  padding: 5%;
-}
 .background {
   background-color: rgb(36, 36, 36);
+  margin-left: 10%;
+  margin-right: 10%;
 }
 </style>
