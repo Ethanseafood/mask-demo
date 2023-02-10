@@ -92,7 +92,7 @@ export default createStore({
       try {
         // const targetPlayerIndex = event.target;
         const res = await fetch(
-          "https://www.balldontlie.io/api/v1/stats/?seasons[]=2022&seasons[]=2023&player_ids[]=237&player_ids[]=17553995&player_ids[]=117&player_ids[]=248&player_ids[]=409&player_ids[]=666925&player_ids[]=464&player_ids[]=38017697&player_ids[]=45&player_ids[]=666609&player_ids[]=472&player_ids[]=38017656&player_ids[]=74&player_ids[]=68&player_ids[]=166",
+          "https://www.balldontlie.io/api/v1/stats/?seasons[]=2022&seasons[]=2023&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736",
           {
             method: "GET",
             headers: {

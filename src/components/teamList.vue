@@ -17,13 +17,31 @@
   <div class="container">
     <div class="background">
       <div
-        class="g-5 mt-5 row row-cols-md-2 row-cols-lg-3 justify-content-center"
+        class="g-5 mt-5 row row-cols-md-2 row-cols-lg-3 justify-content-start"
       >
         <div class="col-md">
           <div>
             <img
               class="img"
-              src="../assets/LAKERS/RosterImage_Beverley_1040x1210.webp"
+              src="../assets/LAKERS/2223_RosterImageUpdate_Bamba_1040x1210.jpg"
+            />
+          </div>
+          <div class="container">
+            <div class="row">
+              <div>
+                <button type="button" class="btn btn-light">Light</button>
+              </div>
+              <div>
+                <button type="button" class="btn btn-light">Light</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div>
+            <img
+              class="img"
+              src="../assets/LAKERS/2223_RosterImageUpdate_Beasley_1040x1210_2.jpg"
             />
           </div>
         </div>
@@ -32,14 +50,6 @@
             <img
               class="img"
               src="../assets/LAKERS/2223_RosterImageUpdate_BrownJr_1040x1210.webp"
-            />
-          </div>
-        </div>
-        <div class="col-md">
-          <div>
-            <img
-              class="img"
-              src="../assets/LAKERS/2223_RosterImageUpdate_Bryant_1040x1210.webp"
             />
           </div>
         </div>
@@ -87,7 +97,7 @@
           <div>
             <img
               class="img"
-              src="../assets/LAKERS/2223_RosterImageUpdate_Jones_1040x1210.webp"
+              src="../assets/LAKERS/2223_RosterImageUpdate_Reaves_1040x1210.webp"
             />
           </div>
         </div>
@@ -95,7 +105,15 @@
           <div>
             <img
               class="img"
-              src="../assets/LAKERS/2223_RosterImageUpdate_Reaves_1040x1210.webp"
+              src="../assets/LAKERS/2223_RosterImageUpdate_Reed_1040x1210.jpg"
+            />
+          </div>
+        </div>
+        <div class="col-md">
+          <div>
+            <img
+              class="img"
+              src="../assets/LAKERS/2223_RosterImageUpdate_Russell_1040x1210.jpg"
             />
           </div>
         </div>
@@ -111,7 +129,7 @@
           <div>
             <img
               class="img"
-              src="../assets/LAKERS/2223_RosterImageUpdate_ToscanoAnderson_1040x1210.webp"
+              src="../assets/LAKERS/2223_RosterImageUpdate_Vanderbilt_1040x1210.jpg"
             />
           </div>
         </div>
@@ -120,14 +138,6 @@
             <img
               class="img"
               src="../assets/LAKERS/2223_RosterImageUpdate_Walker_v2_1040x1210.webp"
-            />
-          </div>
-        </div>
-        <div class="col-md">
-          <div>
-            <img
-              class="img"
-              src="../assets/LAKERS/2223_RosterImageUpdate_Westbrook_1040x1210.webp"
             />
           </div>
         </div>
