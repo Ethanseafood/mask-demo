@@ -28,10 +28,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(28)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>MO BAMBA BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(28)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -46,10 +54,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(38)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>MALIK BEASLEY BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(38)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -64,10 +80,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(68)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>TROY BROWN JR. BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(68)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -82,10 +106,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(38017697)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>MAX CHRISTIE BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(38017697)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -100,10 +132,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(117)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>ANTHONY DAVIS BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(117)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -118,10 +158,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(166)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>WENYEN GABRIEL BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(166)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -136,10 +184,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(666609)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>RUI HACHIMURA BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(666609)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -154,10 +210,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(237)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>LEBRON JAMES BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(237)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -172,10 +236,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(17553995)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>AUSTIN REAVERS BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(17553995)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -190,10 +262,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(390)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>DAVON REED BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(390)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -208,10 +288,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(405)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>D'ANGELO RUSSELL BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(405)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -226,10 +314,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(409)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>DENNIS SCHRÖDER BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(409)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -244,10 +340,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(457)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>JARRED VANDERBILT BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(457)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -262,10 +366,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(464)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>LONNIE WALKER IV BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(464)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -280,10 +392,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(38017656)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>SCOTTY PIPPEN JR. BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(38017656)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -298,10 +418,18 @@
           </div>
           <div class="button container mt-3">
             <div class="row">
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerBio(38017736)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>COLE SWIDER BIO</b>
               </button>
-              <button type="button" class="btn btn-light btn-lg m-3">
+              <button
+                @click="showPlayerStats(38017736)"
+                type="button"
+                class="btn btn-light btn-lg m-3"
+              >
                 <b>PLAYER STATS</b>
               </button>
             </div>
@@ -320,16 +448,18 @@ export default {
     },
   },
   methods: {
-    goToPlayerBio(playerID) {
+    showPlayerBio(playerID) {
       this.$store.commit("setCurrentPlayer", playerID);
+      // console.log(this.$store.getters.selectedPlayerId);
+      this.$router.push({ name: "playerStats" });
+    },
+    showPlayerStats(playerID) {
+      this.$store.commit("setCurrentPlayer", playerID);
+      // console.log(this.$store.getters.selectedPlayerId);
       this.$router.push({ name: "teamDetail" });
     },
   },
-  mounted() {
-    this.$store.dispatch("fetchYearOfAvg");
-    this.$store.dispatch("fetchLakersPlayers");
-    // this.$store.dispatch("fetchAllStats");
-  },
+  mounted() {},
 };
 </script>
 

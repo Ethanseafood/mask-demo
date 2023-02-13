@@ -4,27 +4,23 @@ export default createStore({
   state: {
     allPlayers: [],
     yearOfAvg: [],
-    selectedTeamId: null,
-    selectedPlayerId: null,
+    selectedPlayerId: 0,
   },
   getters: {
-    selectedTeamId(state) {
-      console.log("get teamId");
-      return state.selectedTeamId;
-    },
     selectedPlayerId(state) {
-      console.log("get playerId");
+      // console.log("get selected playerId", state.selectedPlayerId);
       return state.selectedPlayerId;
     },
     allPlayers(state) {
+      console.log("get playerId", state.allPlayers);
       return state.allPlayers.filter(
-        (player) => player.team.id == state.selectedTeamId
+        (dataPlayer) => dataPlayer.player.id == state.selectedPlayerId
       );
     },
-    YearOfAvg(state) {
-      console.log("get playerId");
-      return state.allPlayers.data.filter(
-        (stats) => stats.player.id == state.selectedPlayerId
+    yearOfAvg(state) {
+      console.log("get playerId", state.yearOfAvg);
+      return state.yearOfAvg.data.filter(
+        (dataStats) => dataStats.player_id == state.selectedPlayerId
       );
     },
   },
@@ -36,11 +32,10 @@ export default createStore({
     setYearOfAvg(state, payload) {
       state.yearOfAvg = payload;
     },
-    setCurrentTeam(state, payload) {
-      state.selectedTeamId = payload;
-    },
     setCurrentPlayer(state, payload) {
-      state.selectedPlayerId = payload;
+      let input = Number(payload);
+      state.selectedPlayerId = input;
+      // console.log("mutation current player", payload);
     },
   },
   actions: {
@@ -69,7 +64,7 @@ export default createStore({
         try {
           // const targetPlayerIndex = event.target;
           const res = await fetch(
-            "https://www.balldontlie.io/api/v1/stats/?seasons[]=2022&seasons[]=2023&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736",
+            "https://www.balldontlie.io/api/v1/stats/?seasons[]=2022&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736",
             {
               method: "GET",
               headers: {
@@ -91,7 +86,7 @@ export default createStore({
     async fetchYearOfAvg({ commit }) {
       try {
         const res = await fetch(
-          "https://www.balldontlie.io/api/v1/season_averages/?seasons[]=2022&seasons[]=2023&player_ids[]=237&player_ids[]=17553995&player_ids[]=117&player_ids[]=248&player_ids[]=409&player_ids[]=666925&player_ids[]=464&player_ids[]=38017697&player_ids[]=45&player_ids[]=666609&player_ids[]=472&player_ids[]=38017656&player_ids[]=74&player_ids[]=68&player_ids[]=166",
+          "https://www.balldontlie.io/api/v1/season_averages?seasons[]=2020&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736",
           {
             method: "GET",
             headers: {

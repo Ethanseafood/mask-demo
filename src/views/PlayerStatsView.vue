@@ -1,12 +1,12 @@
 <template>
   <div>
-    <PlayerStats> </PlayerStats>
+    <PlayerBio></PlayerBio>
   </div>
 </template>
 
 <script>
-import PlayerStats from "@/components/PlayerStats";
+import PlayerBio from "@/components/PlayerBio";
 export default {
-  components: { PlayerStats },
+  components: { PlayerBio },
 };
 </script>
