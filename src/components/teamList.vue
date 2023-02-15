@@ -442,11 +442,7 @@
 
 <script>
 export default {
-  computed: {
-    players() {
-      return this.$store.state.allplayers;
-    },
-  },
+  computed: {},
   methods: {
     showPlayerBio(playerID) {
       this.$store.commit("setCurrentPlayer", playerID);

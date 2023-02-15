@@ -2,13 +2,16 @@
   <div class="container">
     <div class="row">
       <div>
-        <h3>stats</h3>
+        <h3>
+          <!-- {{ playerStats.player.first_name }}&nbsp;{{
+            playerStats.player.first_name
+          }} -->
+        </h3>
       </div>
       <table class="table table-dark table-hover">
         <thead>
           <tr>
             <th scope="col">DATE</th>
-            <th scope="col">Season</th>
             <th scope="col">MIN</th>
             <th scope="col">PTS</th>
             <th scope="col">FGM</th>
@@ -30,10 +33,9 @@
             <th scope="col">PF</th>
           </tr>
         </thead>
-        <tbody>
+        <!-- <tbody>
           <tr v-for="stats in playerStats" :key="stats.player.id">
             <td>{{ stats.game.date }}</td>
-            <td>{{ stats.game.season }}</td>
             <td>{{ stats.min }}</td>
             <td>{{ stats.pts }}</td>
             <td>{{ stats.fgm }}</td>
@@ -54,7 +56,7 @@
             <td>{{ stats.turnover }}</td>
             <td>{{ stats.pf }}</td>
           </tr>
-        </tbody>
+        </tbody> -->
       </table>
     </div>
   </div>
@@ -62,12 +64,24 @@
 <script>
 export default {
   computed: {
-    playerStats() {
-      return this.$store.getters.allPlayers;
-    },
+    // playerStats() {
+    //   return this.$store.getters.MapPlayers;
+    // },
   },
-  methods: {},
-  mounted() {},
+  methods: {
+    // date() {
+    //   const dateString = "2022-12-09T00:00:00.000Z";
+    //   const date = new Date(dateString);
+    //   console.log(date);
+    //   console.log(this.playerStats.game.date);
+    // },
+  },
+  mounted() {
+    // this.date();
+    // console.log(this.$store.getters.MapPlayers[0].game.date);
+    // console.log(this.$store.getters.MapPlayers);
+    return this.$store.getters.MapPlayers;
+  },
 };
 </script>
 <style scoped lang="scss"></style>

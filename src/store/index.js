@@ -2,40 +2,44 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    allPlayers: [],
+    mapPlayers: new Map(),
     yearOfAvg: [],
-    selectedPlayerId: 0,
+    selectedPlayerId: "",
   },
   getters: {
     selectedPlayerId(state) {
       // console.log("get selected playerId", state.selectedPlayerId);
+
       return state.selectedPlayerId;
     },
-    allPlayers(state) {
-      console.log("get playerId", state.allPlayers);
-      return state.allPlayers.filter(
-        (dataPlayer) => dataPlayer.player.id == state.selectedPlayerId
-      );
+    mapPlayers(state) {
+      console.log("get playerId", state.mapPlayers);
+
+      return state.mapPlayers.get(state.selectedPlayerId);
+
+      // return state.allPlayers.filter(
+      //   (dataPlayer) => dataPlayer.player.id == state.selectedPlayerId
+      // );
     },
     yearOfAvg(state) {
-      console.log("get playerId", state.yearOfAvg);
+      // console.log("get playerId", state.yearOfAvg);
       return state.yearOfAvg.data.filter(
         (dataStats) => dataStats.player_id == state.selectedPlayerId
       );
     },
   },
   mutations: {
-    setAllPlayers(state, payload) {
-      state.allPlayers = payload;
-      console.log("all players", payload);
+    setGroupedPlayers(state, payload) {
+      state.mapPlayers = payload;
+      console.log("MapPlayers", payload);
     },
     setYearOfAvg(state, payload) {
       state.yearOfAvg = payload;
     },
     setCurrentPlayer(state, payload) {
-      let input = Number(payload);
-      state.selectedPlayerId = input;
-      // console.log("mutation current player", payload);
+      // let input = Number(payload);
+      state.selectedPlayerId = payload;
+      // console.log("mutation current player", input);
     },
   },
   actions: {
@@ -60,11 +64,13 @@ export default createStore({
     async fetchLakersPlayers({ commit }) {
       let json = {};
       let playerjson = [];
-      for (let i = 0; i < 38; i++) {
+      for (let i = 1; i < 27; i++) {
         try {
           // const targetPlayerIndex = event.target;
           const res = await fetch(
-            "https://www.balldontlie.io/api/v1/stats/?seasons[]=2022&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736",
+            `https://www.balldontlie.io/api/v1/stats?seasons[]=2022&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736&page=${String(
+              i
+            )}`,
             {
               method: "GET",
               headers: {
@@ -80,13 +86,44 @@ export default createStore({
           console.error(err);
         }
       }
-      commit("setAllPlayers", playerjson);
+      //資料落地後執行
+      //這段為了取代ALLPLAYERS，allPlayers-> allPlayersMap
+      // allPlayersMap("playerId")
+
+      // const arr = [
+      //   { id: 1, name: "apple", category: "fruit" },
+      //   { id: 2, name: "banana", category: "fruit" },
+      //   { id: 3, name: "carrot", category: "vegetable" },
+      //   { id: 4, name: "tomato", category: "vegetable" },
+      //   { id: 5, name: "pear", category: "fruit" },
+      // ];
+      const groupedPlayers = playerjson.reduce((result, current) => {
+        const currentPlayerId = current.player.id.toString();
+        if (!result[currentPlayerId]) {
+          result[currentPlayerId] = [];
+        }
+        result[currentPlayerId].push(current);
+        return result;
+      }, new Map());
+
+      // console.log(groupedPlayers);
+      // output: { fruit: [
+      //             { id: 1, name: 'apple', category: 'fruit' },
+      //             { id: 2, name: 'banana', category: 'fruit' },
+      //             { id: 5, name: 'pear', category: 'fruit' }
+      //           ],
+      //           vegetable: [
+      //             { id: 3, name: 'carrot', category: 'vegetable' },
+      //             { id: 4, name: 'tomato', category: 'vegetable' }
+      //           ]
+      //         }
+      commit("setGroupedPlayers", groupedPlayers);
     },
 
     async fetchYearOfAvg({ commit }) {
       try {
         const res = await fetch(
-          "https://www.balldontlie.io/api/v1/season_averages?seasons[]=2020&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736",
+          "https://www.balldontlie.io/api/v1/season_averages?seasons[]=2022&player_ids[]=28&player_ids[]=38&player_ids[]=68&player_ids[]=38017697&player_ids[]=117&player_ids[]=166&player_ids[]=666609&player_ids[]=237&player_ids[]=17553995&player_ids[]=390&player_ids[]=405&player_ids[]=409&player_ids[]=457&player_ids[]=464&player_ids[]=38017656&player_ids[]=38017736",
           {
             method: "GET",
             headers: {
@@ -97,7 +134,7 @@ export default createStore({
           }
         );
         const json = await res.json();
-        console.log("YearOfAvg", json);
+        // console.log("YearOfAvg", json);
         commit("setYearOfAvg", json);
       } catch (err) {
         console.error(err);
