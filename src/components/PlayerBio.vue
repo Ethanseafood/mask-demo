@@ -33,8 +33,8 @@
             <th scope="col">PF</th>
           </tr>
         </thead>
-        <!-- <tbody>
-          <tr v-for="stats in playerStats" :key="stats.player.id">
+        <tbody>
+          <tr v-for="stats in selectedPlayerStats" :key="stats.id">
             <td>{{ stats.game.date }}</td>
             <td>{{ stats.min }}</td>
             <td>{{ stats.pts }}</td>
@@ -56,7 +56,7 @@
             <td>{{ stats.turnover }}</td>
             <td>{{ stats.pf }}</td>
           </tr>
-        </tbody> -->
+        </tbody>
       </table>
     </div>
   </div>
@@ -64,9 +64,14 @@
 <script>
 export default {
   computed: {
-    // playerStats() {
-    //   return this.$store.getters.MapPlayers;
-    // },
+    selectedPlayerStats() {
+      return this.$store.state.mapObjectPlayers[
+        this.$store.state.selectedPlayerId
+      ];
+      // return this.$store.state.mapObjectPlayers.get(
+      //   this.$store.state.selectedPlayerId
+      // );
+    },
   },
   methods: {
     // date() {
@@ -79,8 +84,6 @@ export default {
   mounted() {
     // this.date();
     // console.log(this.$store.getters.MapPlayers[0].game.date);
-    // console.log(this.$store.getters.MapPlayers);
-    return this.$store.getters.MapPlayers;
   },
 };
 </script>

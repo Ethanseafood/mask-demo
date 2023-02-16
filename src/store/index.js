@@ -2,7 +2,7 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    mapPlayers: new Map(),
+    mapObjectPlayers: {},
     yearOfAvg: [],
     selectedPlayerId: "",
   },
@@ -12,15 +12,15 @@ export default createStore({
 
       return state.selectedPlayerId;
     },
-    mapPlayers(state) {
-      console.log("get playerId", state.mapPlayers);
+    // mapPlayers(state) {
+    //   console.log("get playerId", state.mapPlayers);
 
-      return state.mapPlayers.get(state.selectedPlayerId);
+    //   return state.mapPlayers.get(state.selectedPlayerId);
 
-      // return state.allPlayers.filter(
-      //   (dataPlayer) => dataPlayer.player.id == state.selectedPlayerId
-      // );
-    },
+    // return state.allPlayers.filter(
+    //   (dataPlayer) => dataPlayer.player.id == state.selectedPlayerId
+    // );
+    // },
     yearOfAvg(state) {
       // console.log("get playerId", state.yearOfAvg);
       return state.yearOfAvg.data.filter(
@@ -30,15 +30,15 @@ export default createStore({
   },
   mutations: {
     setGroupedPlayers(state, payload) {
-      state.mapPlayers = payload;
-      console.log("MapPlayers", payload);
+      state.mapObjectPlayers = payload;
+      console.log("mapObjectPlayers", payload);
     },
     setYearOfAvg(state, payload) {
       state.yearOfAvg = payload;
     },
     setCurrentPlayer(state, payload) {
-      // let input = Number(payload);
-      state.selectedPlayerId = payload;
+      let input = payload.toString();
+      state.selectedPlayerId = input;
       // console.log("mutation current player", input);
     },
   },
@@ -63,7 +63,7 @@ export default createStore({
 
     async fetchLakersPlayers({ commit }) {
       let json = {};
-      let playerjson = [];
+      let playerJson = [];
       for (let i = 1; i < 27; i++) {
         try {
           // const targetPlayerIndex = event.target;
@@ -81,7 +81,7 @@ export default createStore({
             }
           );
           json = await res.json();
-          playerjson = playerjson.concat(json.data);
+          playerJson = playerJson.concat(json.data);
         } catch (err) {
           console.error(err);
         }
@@ -97,14 +97,14 @@ export default createStore({
       //   { id: 4, name: "tomato", category: "vegetable" },
       //   { id: 5, name: "pear", category: "fruit" },
       // ];
-      const groupedPlayers = playerjson.reduce((result, current) => {
+      const groupedPlayers = playerJson.reduce((result, current) => {
         const currentPlayerId = current.player.id.toString();
         if (!result[currentPlayerId]) {
           result[currentPlayerId] = [];
         }
         result[currentPlayerId].push(current);
         return result;
-      }, new Map());
+      }, {});
 
       // console.log(groupedPlayers);
       // output: { fruit: [
