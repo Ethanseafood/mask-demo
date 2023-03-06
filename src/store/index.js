@@ -140,8 +140,6 @@ export default createStore({
         console.error(err);
       }
     },
-    // const playerRow = document.querySelector("table td tr"); //舉例
-    // const playerId = playerRow.dataset.playerId; //舉例
   },
   modules: {},
 });

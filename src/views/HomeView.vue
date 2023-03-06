@@ -1,61 +1,14 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div>
-        <h3>ROSTERS</h3>
+  <div class="kv">
+    <div class="container">
+      <div class="row justify-content-center align-items-end">
+        <div class="col-8 col-md-6">
+          <div class="text">
+            <h1>Lake Show Squad</h1>
+            <p>17x Champions, get to know your Lakers team.</p>
+          </div>
+        </div>
       </div>
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Player</th>
-            <th scope="col">POS</th>
-            <th scope="col">MIN%</th>
-            <th scope="col">PTS%</th>
-            <th scope="col">FGM</th>
-            <th scope="col">FGA</th>
-            <th scope="col">FG%</th>
-            <th scope="col">3PM</th>
-            <th scope="col">3PA</th>
-            <th scope="col">3P%</th>
-            <th scope="col">FTM</th>
-            <th scope="col">FTA</th>
-            <th scope="col">FT%</th>
-            <th scope="col">OREB</th>
-            <th scope="col">DREB</th>
-            <th scope="col">REB%</th>
-            <th scope="col">AST%</th>
-            <th scope="col">STL%</th>
-            <th scope="col">BLK%</th>
-            <th scope="col">TOV%</th>
-            <th scope="col">PF%</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Joel Embiid</td>
-            <td>F-C</td>
-            <td>36:49</td>
-            <td>23</td>
-            <td>9</td>
-            <td>21</td>
-            <td>0.429</td>
-            <td>1</td>
-            <td>4</td>
-            <td>0.25</td>
-            <td>4</td>
-            <td>5</td>
-            <td>0.8</td>
-            <td>2</td>
-            <td>8</td>
-            <td>10</td>
-            <td>2</td>
-            <td>1</td>
-            <td>2</td>
-            <td>5</td>
-            <td>3</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </template>
@@ -65,11 +18,58 @@
 
 export default {
   name: "HomeView",
-  computed: {
-    liveGames() {
-      return this.$store.liveGameData;
-    },
-  },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.kv {
+  background-image: url("https://wallpapers.com/images/file/rough-texture-la-lakers-background-ni0sa1xje9ca7ae5.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.kv .text {
+  text-align: center;
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 200%;
+  margin-bottom: 30%;
+  text-shadow: 2px 3px 5px #000000;
+  font-size: 20px;
+}
+.kv .container {
+  height: 100%;
+}
+.kv .container > .row {
+  height: 100%;
+}
+@media (max-width: 450px) {
+  .kv {
+    background-image: url("https://wallpapers.com/images/file/rough-texture-la-lakers-background-ni0sa1xje9ca7ae5.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+  }
+  .kv .text {
+    font-size: 14px;
+    margin-bottom: 30%;
+  }
+}
+@media (max-width: 820px) {
+  .kv {
+    background-image: url("https://wallpapers.com/images/file/rough-texture-la-lakers-background-ni0sa1xje9ca7ae5.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+  }
+  .kv .text {
+    font-size: 14px;
+    margin-bottom: 30%;
+  }
+}
+</style>
