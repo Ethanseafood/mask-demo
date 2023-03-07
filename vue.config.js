@@ -5,6 +5,9 @@ module.exports = defineConfig(
     // devtool: "source-map",
   },
   {
-    publicPath: "/vuex-api-demo-NBAteam-LAKERS/",
+    publicPath:
+      process.env.NODE_ENV === "production"
+        ? "/vuex-api-demo-NBAteam-LAKERS/"
+        : "/"
   }
 );
