@@ -1,5 +1,5 @@
 <template>
-  <div class="bg">
+  <div class="kv">
     <div class="container">
       <div class="row justify-content-center align-items-end">
         <div class="col-8 col-md-6">
@@ -21,7 +21,7 @@ export default {
 };
 </script>
 <style scoped>
-.bg {
+.kv {
   background-image: url("https://wallpapers.com/images/file/rough-texture-la-lakers-background-ni0sa1xje9ca7ae5.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -29,7 +29,7 @@ export default {
   height: 100vh;
   width: 100%;
 }
-.bg .text {
+.kv .text {
   text-align: center;
   color: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -38,14 +38,14 @@ export default {
   text-shadow: 2px 3px 5px #000000;
   font-size: 20px;
 }
-.bg .container {
+.kv .container {
   height: 100%;
 }
-.bg .container > .row {
+.kv .container > .row {
   height: 100%;
 }
 @media (max-width: 450px) {
-  .bg {
+  .kv {
     background-image: url("https://wallpapers.com/images/file/rough-texture-la-lakers-background-ni0sa1xje9ca7ae5.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -53,13 +53,13 @@ export default {
     height: 80vh;
     width: 100%;
   }
-  .bg .text {
+  .kv .text {
     font-size: 14px;
     margin-bottom: 30%;
   }
 }
 @media (max-width: 820px) {
-  .bg {
+  .kv {
     background-image: url("https://wallpapers.com/images/file/rough-texture-la-lakers-background-ni0sa1xje9ca7ae5.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -67,7 +67,7 @@ export default {
     height: 70vh;
     width: 100%;
   }
-  .bg .text {
+  .kv .text {
     font-size: 14px;
     margin-bottom: 30%;
   }
