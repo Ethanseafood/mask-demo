@@ -40,13 +40,13 @@
             <td>{{ stats.pts }}</td>
             <td>{{ stats.fgm }}</td>
             <td>{{ stats.fga }}</td>
-            <td>{{ stats.fg_pct.toFixed(2) }}</td>
+            <td>{{ stats.fg_pct }}</td>
             <td>{{ stats.fg3m }}</td>
             <td>{{ stats.fg3a }}</td>
-            <td>{{ stats.fg3_pct.toFixed(2) }}</td>
+            <td>{{ stats.fg3_pct }}</td>
             <td>{{ stats.ftm }}</td>
             <td>{{ stats.fta }}</td>
-            <td>{{ stats.ft_pct.toFixed(2) }}</td>
+            <td>{{ stats.ft_pct }}</td>
             <td>{{ stats.oreb }}</td>
             <td>{{ stats.dreb }}</td>
             <td>{{ stats.reb }}</td>
